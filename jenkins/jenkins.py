@@ -1,14 +1,11 @@
-def get_input() -> str:
-
-	# TODO: Use speech-to-text as input
-	return input()
+import speech_to_text
 
 
 def execute(task: str) -> bool:
 
 	"""Resolves the provided task, returns whether Jenkins should continue working or not."""
 
-	if task.lower() == "stop":
+	if task.lower() == "jenkins stop":
 		return False
 
 	print("I'm sorry, but i can't understand the task '", task, "'.")
@@ -16,12 +13,12 @@ def execute(task: str) -> bool:
 	return True
 
 
-def run_jenkins():
+def main() -> None:
 
 	print("Hello, I'm Jenkins. Give me a task:")
 
 	while True:
-		task = get_input()
+		task = speech_to_text.get_input()
 		print("I heard '", task, "'.")
 
 		should_stop = not execute(task)
@@ -34,4 +31,4 @@ def run_jenkins():
 
 
 if __name__ == '__main__':
-	run_jenkins()
+	main()
