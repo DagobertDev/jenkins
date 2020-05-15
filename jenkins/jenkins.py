@@ -1,4 +1,4 @@
-import speech_to_text
+from jenkins import speech_to_text
 
 
 def execute(task: str) -> bool:
