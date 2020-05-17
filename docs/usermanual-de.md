@@ -1,6 +1,6 @@
 # Handbuch für Jenkins
 ## Installation
-Für die Nutzung von Jenkins ist [Python 3.8.2](https://www.python.org/downloads/release/python-382/) notwendig. 
+Für die Nutzung von Jenkins ist Python 3.7 64bit notwendig. 
 Außerdem müssen weitere benötigte Bibliotheken durch `pip install -r requirements.txt` installiert werden.
 
 ## Funktionsumfang
