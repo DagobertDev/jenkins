@@ -11,6 +11,7 @@ def get_input() -> str:
 			return recognizer.recognize_google(audio, language="de-de")
 		except speech_recognition.UnknownValueError:
 			print("There was a problem with our Speech to Text API")
+			return ""
 
 
 def setup_speech_to_text():
