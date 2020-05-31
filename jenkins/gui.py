@@ -1,40 +1,16 @@
 from tkinter import *
+from PIL import ImageTk, Image
 import speech_to_text
-import tkinter.simpledialog
-import tkinter.messagebox
+import jenkins
 
 root = Tk()
 
-
-def main() -> None:
-    print("Hello, I'm Jenkins. Give me a task:")
-
-    while True:
-        task = speech_to_text.get_input()
-        print("I heard '", task, "'.")
-
-        should_stop = not execute(task)
-
-        if should_stop:
-            print("Stopping now, see you soon.")
-            return
-
-        print("Please ask your next question:")
-
-
-def execute(task: str) -> bool:
-    """Resolves the provided task, returns whether Jenkins should continue working or not."""
-
-    if task.lower() == "jenkins stop":
-        return False
-
-    print("I'm sorry, but i can't understand the task '", task, "'.")
-    # TODO: Understand and execute task
-    return True
-
-
 canvas = Canvas(root, height=500, width=500)
 canvas.pack()
+
+
+root.title("Jenkins - V1")
+root.iconbitmap("C:\\Users\\Vinci\\Jenkins_Icon.ico")
 
 
 def execute_application(task: str):
@@ -43,18 +19,30 @@ def execute_application(task: str):
 
 
 def create_label(task: str):
-    output = Label(root, text=task, bg="yellow")
-    output.config(height=10, width=69)
+    output = Label(root, text=task, borderwidth=2, relief="solid", bg="#858585")
+    output.config(height=10, width=70)
+    output.pack()
     output.place(x=5, y=180)
 
 
-start_button = Button(root, text="Click on me, to tell me something!", bg="green", command=lambda: [main, create_label
-(task=speech_to_text.get_input()), execute_application(task=speech_to_text.get_input())])
+start_button = Button(root, text="Click on me, to tell me something!",
+                      borderwidth=2, relief="solid", bg="#6CA6CD", command=lambda:
+[jenkins.main, create_label(task=speech_to_text.get_input()), execute_application(task=speech_to_text.get_input())])
 start_button.config(height=7, width=69)
 start_button.place(x=5, y=20)
 
-end_button = Button(root, text="end", bg="red", command=root.destroy)
+speaker = ImageTk.PhotoImage(Image.open("C:\\Users\\Vinci\\Lausprecher2.png"))
+speaker_label = Label(root, image=speaker)
+speaker_label.place(x=380, y=50)
+
+
+end_button = Button(root, text="Jenkins schließen!",
+                    borderwidth=2, relief="solid", bg="#6CA6CD", command=root.destroy)
 end_button.config(height=7, width=69)
 end_button.place(x=5, y=380)
+
+exitImage = ImageTk.PhotoImage(Image.open("C:\\Users\\Vinci\\exit4.png"))
+exitImage_label = Label(root, image=exitImage)
+exitImage_label.place(x=380, y=415)
 
 root.mainloop()
