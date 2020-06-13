@@ -12,7 +12,7 @@ TRAIN_DATA = [
             "deps": ["NONE", "NONE", "NUM", "OPER", "NUM"],
         },
     ),
-    (
+        (
         "Hallo Jenkins berechne 1 + 2 - 23",
         {
             "heads": [1, 2, 2, 3, 3, 4, 5, 6],
@@ -77,6 +77,7 @@ TRAIN_DATA = [
                      "CON", "NONE", "OPER", "CON", "NUM", "LIST", "NUM"],
         },
     ),
+
     (
         "Was ist 1 - 2",
         {

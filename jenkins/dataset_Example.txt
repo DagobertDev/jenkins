@@ -1,0 +1,13 @@
+( 
+ 'Was ist 1 + 2',
+ { 
+ 'heads': [1, 1, 2, 2, 3,],
+ 'deps': ['NONE' 'NONE' 'NUM' 'OPER' 'NUM'], 
+ }, 
+ ),( 
+ ' Was ist die Summe von 243 und 53 und 86',
+ { 
+ 'heads': [0, 0, 0, 5, 7, 8, 34, 3, 4, 3,],
+ 'deps': ['NONE ' 'NONE' 'NONE' 'NUM' 'CON' 'NUM' 'LIST' 'NUM' 'LIST' 'NUM'], 
+ }, 
+ ),
