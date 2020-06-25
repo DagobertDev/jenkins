@@ -1,6 +1,8 @@
 from __future__ import unicode_literals, print_function
 import random
 import spacy
+import math_de
+import nlp as jenkins_nlp
 
 
 def train(train_data, nlp, n_iter=15):
@@ -39,3 +41,9 @@ def train(train_data, nlp, n_iter=15):
 
 def print_doc(doc):
     print([(t.text, t.dep_, t.head.text) for t in doc])
+
+
+if __name__ == '__main__':
+    nlp = spacy.blank("de")
+    train(math_de.TRAIN_DATA, nlp)
+    jenkins_nlp.save(_nlp=nlp)
