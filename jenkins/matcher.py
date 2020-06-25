@@ -1,31 +1,36 @@
-from spacy.matcher import PhraseMatcher
-from spacy.tokens import Span
+from spacy.tokens import Token
 
 
-operator_dic = {'addition': ['+', 'addiere', 'summe', 'zähle'],
-                'subtraction': ['-', 'subtrahiere', 'ziehe'],
-                'division': ['/'],
-                'multiplication': ['*'],
-                }
+class Term:
+    NONE = 0
+    NUMBER = 1
+    ADDITION = 2
+    SUBSTRACTION = 3
+    DIVISION = 4
+    MULTIPLICATION = 5
 
 
-def setup_matcher(nlp, doc, name, operators):
-    matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
-    phrase_patterns = [nlp(text) for text in operators]
-    matcher.add(name, None, *phrase_patterns)
-    found_matches = matcher(doc)
-    op = doc.vocab.strings[name]
-    new_ents = [Span(doc, match[1], match[2], label=op) for match in found_matches]
-    doc.ents = list(doc.ents) + new_ents
+operator_patterns = {Term.ADDITION: ['+', 'addiere', 'summe', 'zähle'],
+                     Term.SUBSTRACTION: ['-', 'subtrahiere', 'ziehe'],
+                     Term.DIVISION: ['/', "teile"],
+                     Term.MULTIPLICATION: ['*', "multipliziere"],
+                     }
 
 
-def match(nlp, test):
-    doc = nlp(test)
-    for o in operator_dic:
-        setup_matcher(nlp, doc, o, operator_dic[o])
+def match_token(token) -> int:
+    if token.is_digit:
+        return Term.NUMBER
+
+    for operator in operator_patterns:
+        if token.lower_ in operator_patterns[operator]:
+            return operator
+    return Term.NONE
 
 
 def print_doc(doc):
     for ent in doc.ents:
         if ent.label_ != '':
             print(ent.text + ' : ' + ent.label_)
+
+
+Token.set_extension("operator", getter=lambda tok: match_token(tok))
