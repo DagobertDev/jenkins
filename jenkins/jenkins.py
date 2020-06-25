@@ -1,6 +1,8 @@
 import speech_to_text
 import nlp
 
+nlp = nlp.NLP()
+
 
 def execute(task: str) -> bool:
 
@@ -33,8 +35,7 @@ def main() -> None:
 
 def recognize_input():
 	inp = speech_to_text.get_input()
-	nlp.recognize(inp)
-	return inp
+	return nlp.recognize(inp)
 
 
 if __name__ == '__main__':

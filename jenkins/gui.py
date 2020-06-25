@@ -15,26 +15,29 @@ root.title("Jenkins - V1")
 root.iconbitmap("../images/Jenkins_Icon.ico")
 
 
-def create_label_input(task: str):
-    output = Label(root, text=task, borderwidth=2, relief="solid", bg="#858585")
-    output.config(height=10, width=30)
-    output.pack()
-    output.place(x=5, y=180)
+input_label = Label(root, text="Task", borderwidth=2, relief="solid", bg="#858585")
+input_label.config(height=10, width=30)
+input_label.pack()
+input_label.place(x=5, y=180)
 
 
-def create_label_output(task: str):
-    output = Label(root, text=task, borderwidth=2, relief="solid", bg="#858585")
-    output.config(height=10, width=30)
-    output.pack()
-    output.place(x=282, y=180)
+output_label = Label(root, text="Result", borderwidth=2, relief="solid", bg="#858585")
+output_label.config(height=10, width=30)
+output_label.pack()
+output_label.place(x=282, y=180)
+
+
+def update_labels():
+    result = jenkins.recognize_input()
+    input_label.config(text=result["term"])
+    output_label.config(text=result["result"])
 
 
 boldButton = Font(size=10, weight="bold")
 
 
 start_button = Button(root, text="Click on me,\n" "to tell me something!", font=boldButton,
-                      borderwidth=2, relief="solid", bg="#6CA6CD", command=lambda:
-[jenkins.main, create_label_input(task=speech_to_text.get_input()), create_label_output(task=speech_to_text.get_input())])
+                      borderwidth=2, relief="solid", bg="#6CA6CD", command=lambda: update_labels())
 start_button.config(height=7, width=60)
 start_button.place(x=5, y=20)
 
