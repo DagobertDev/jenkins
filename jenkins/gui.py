@@ -1,8 +1,7 @@
 from tkinter import *
 from tkinter.font import Font
-
 from PIL import ImageTk, Image
-import speech_to_text
+
 import jenkins
 
 root = Tk()
@@ -25,9 +24,9 @@ def create_label(task: str):
 boldButton = Font(size=10, weight="bold")
 
 
-start_button = Button(root, text="Click on me,\n" "to tell me something!", font=boldButton,
-                      borderwidth=2, relief="solid", bg="#6CA6CD", command=lambda:
-[jenkins.main, create_label(task=speech_to_text.get_input())])
+start_button = Button(root, text="Zuhören starten", font=boldButton,
+                      borderwidth=2, relief="solid", bg="#6CA6CD",
+                      command=lambda: [create_label(task=jenkins.recognize_input())])
 start_button.config(height=7, width=60)
 start_button.place(x=5, y=20)
 
@@ -36,7 +35,7 @@ speaker_label = Label(root, image=speaker)
 speaker_label.place(x=380, y=50)
 
 
-end_button = Button(root, text="Exit!", font=boldButton,
+end_button = Button(root, text="Jenkins beenden", font=boldButton,
                     borderwidth=2, relief="solid", bg="#6CA6CD", command=root.destroy)
 end_button.config(height=7, width=60)
 end_button.place(x=5, y=378)
