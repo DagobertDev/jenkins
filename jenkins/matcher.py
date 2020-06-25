@@ -10,8 +10,8 @@ class Term:
     MULTIPLICATION = 5
 
 
-operator_patterns = {Term.ADDITION: ['+', 'addiere', 'summe', 'zähle'],
-                     Term.SUBSTRACTION: ['-', 'subtrahiere', 'ziehe'],
+operator_patterns = {Term.ADDITION: ['+', 'plus', 'addiere', 'summe', 'zähle'],
+                     Term.SUBSTRACTION: ['-', 'minus', 'subtrahiere', 'ziehe'],
                      Term.DIVISION: ['/', "teile"],
                      Term.MULTIPLICATION: ['*', "multipliziere"],
                      }
