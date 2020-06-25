@@ -130,63 +130,63 @@ TRAIN_DATA = [
         'Hey Jenkins rechne 2 x 20',
         {
             'heads': [1, 1, 2, 3, 3, 4, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NONE', 'NONE', 'NONE', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'Multipliziere 5 mit 7',
         {
             'heads': [1, 1, 3, 0, ],
-            'deps': ['OPER' 'NUM' 'CON' 'NUM'],
+            'deps': ['OPER', 'NUM', 'CON', 'NUM'],
         },
     ),
     (
         'Hey Jenkins berechne 5 x 8 x 6',
         {
             'heads': [1, 2, 2, 3, 3, 4, 5, 6, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NONE', 'NONE', 'NONE', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'Berechne das Produkt von 3 und 4',
         {
             'heads': [0, 2, 2, 4, 2, 4, 5, ],
-            'deps': ['NONE ' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM'],
+            'deps': ['NONE', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
         },
     ),
     (
         'Multipliziere 5 mit 4 mit 3 mit 2 mit 7',
         {
             'heads': [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, ],
-            'deps': ['OPER ' 'NUM' 'LIST' 'NUM' 'LIST' 'NUM' 'LIST' 'NUM' 'LIST' 'NUM'],
+            'deps': ['OPER', 'NUM', 'LIST', 'NUM', 'LIST', 'NUM', 'LIST', 'NUM', 'LIST', 'NUM'],
         },
     ),
     (
         '3 x 5 x 6 x 11 x 6',
         {
             'heads': [0, 0, 1, 2, 3, 4, 5, 6, 7, ],
-            'deps': ['NUM' 'OPER' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NUM', 'OPER', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'Multipliziere das Produkt aus 5 und 7 mit dem Produkt aus 11 und 9',
         {
             'heads': [9, 2, 0, 4, 2, 4, 5, 9, 9, 9, 11, 9, 11, 12, ],
-            'deps': ['OPER' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM' 'CON' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM'],
+            'deps': ['OPER', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM', 'CON', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
         },
     ),
     (
         'Multipliziere 5 mit dem Produkt aus 9 und 9',
         {
             'heads': [4, 0, 3, 3, 4, 6, 4, 6, 7, ],
-            'deps': ['OPER' 'NUM' 'CON' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM'],
+            'deps': ['OPER', 'NUM', 'CON', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
         },
     ),
     (
         'Hey Jenkins gebe mir das Ergbenis von 24 x 12 aus',
         {
             'heads': [1, 2, 3, 3, 5, 5, 7, 7, 7, 8, 10, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'CON' 'NUM' 'OPER' 'NUM' 'NONE'],
+            'deps': ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'CON', 'NUM', 'OPER', 'NUM', 'NONE'],
         },
     ),
     # Division Data-Set
@@ -194,62 +194,62 @@ TRAIN_DATA = [
         'Hey Jenkins rechne 20 durch 5',
         {
             'heads': [1, 1, 2, 3, 3, 4, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NONE', 'NONE', 'NONE', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'berechne 36 / 6',
         {
             'heads': [0, 1, 1, 2, ],
-            'deps': ['NONE' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NONE', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'Hey Jenkins rechne 20 / 5 / 2',
         {
             'heads': [1, 2, 2, 3, 3, 4, 5, 6, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NONE', 'NONE', 'NONE', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'bilde den Quotienten aus 20 und 5',
         {
             'heads': [1, 2, 2, 4, 2, 4, 5, ],
-            'deps': ['NONE' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM'],
+            'deps': ['NONE', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
         },
     ),
     (
         'Hey Jenkins dividiere 20 durch 5',
         {
             'heads': [1, 2, 3, 3, 5, 2, ],
-            'deps': ['NONE' 'NONE' 'OPER' 'NUM' 'CON' 'NUM'],
+            'deps': ['NONE', 'NONE', 'OPER', 'NUM', 'CON', 'NUM'],
         },
     ),
     (
         '100 / 2 / 5 / 2 / 5',
         {
             'heads': [0, 0, 1, 2, 3, 4, 5, 6, 7, ],
-            'deps': ['NUM' 'OPER' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NUM', 'OPER', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM'],
         },
     ), (
         '100 durch 5 durch 2 durch 5',
         {
             'heads': [0, 0, 1, 2, 3, 4, 5, ],
-            'deps': ['NUM' 'OPER' 'NUM' 'OPER' 'NUM' 'OPER' 'NUM'],
+            'deps': ['NUM', 'OPER', 'NUM', 'OPER', 'NUM', 'OPER', 'NUM'],
         },
     ),
     (
         'Hey Jenkins gebe mit das Ergebnis von 42 / 6 aus',
         {
-            'heads': [1, 2, 3, 3, 5, 5, 7, 7, 7, 8, 10, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'CON' 'NUM' 'OPER' 'NUM' 'NONE'],
+            'heads': [1, 2, 3, 3, 5, 5, 7, 7, 7, 8, 10,],
+            'deps': ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'CON', 'NUM', 'OPER', 'NUM', 'NONE'],
         },
     ),
     (
         'Hey Jenkins gebe mit das Ergebnis von 81 durch 9 aus',
         {
-            'heads': [1, 2, 3, 3, 5, 5, 7, 7, 7, 8, 10, ],
-            'deps': ['NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'NONE' 'CON' 'NUM' 'OPER' 'NUM' 'NONE'],
+            'heads': [1, 2, 3, 3, 5, 5, 7, 7, 7, 8, 10],
+            'deps': ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'CON', 'NUM', 'OPER', 'NUM', 'NONE'],
         },
     ),
 ]
