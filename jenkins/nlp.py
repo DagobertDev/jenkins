@@ -34,8 +34,8 @@ class NLP:
                 break
 
         if current is None:
-            print("Could not find ROOT")
-            return
+            print("Could not find useable ROOT")
+            return {"term": "Error: Could not find useable ROOT", "result": ""}
 
         import calculator
         term = calculator.generate_term(current).to_string()

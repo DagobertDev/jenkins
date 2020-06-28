@@ -12,8 +12,8 @@ class Term:
 
 operator_patterns = {Term.ADDITION: ['+', 'plus', 'addiere', 'summe', 'zähle'],
                      Term.SUBSTRACTION: ['-', 'minus', 'subtrahiere', 'ziehe'],
-                     Term.DIVISION: ['/', "teile"],
-                     Term.MULTIPLICATION: ['*', "multipliziere"],
+                     Term.DIVISION: ['/', 'teile', 'durch', 'quotient', 'quotienten'],
+                     Term.MULTIPLICATION: ['x', 'multipliziere', 'produkt', 'produkte'],
                      }
 
 

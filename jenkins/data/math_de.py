@@ -57,7 +57,7 @@ TRAIN_DATA = [
     (
         "Nenne die Summe von 15 und 49",
         {
-            "heads": [0, 2, 2, 4, 2, 4, 5],
+            "heads": [0, 2, 2, 3, 2, 4, 5],
             "deps": ["NONE", "NONE", "OPER", "CON", "NUM", "LIST", "NUM"],
         },
     ),

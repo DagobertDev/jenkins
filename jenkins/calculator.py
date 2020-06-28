@@ -40,6 +40,16 @@ class Subtraction(Operator):
         super().__init__(number, "-")
 
 
+class Multiplication(Operator):
+    def __init__(self, number):
+        super().__init__(number, "*")
+
+
+class Division(Operator):
+    def __init__(self, number):
+        super().__init__(number, "/")
+
+
 class ProxyNumber(Number):
     number: Number
     operator: Operator = None
@@ -66,6 +76,8 @@ switch_term = {
     matcher.Term.NUMBER: Number,
     matcher.Term.ADDITION: Addition,
     matcher.Term.SUBSTRACTION: Subtraction,
+    matcher.Term.MULTIPLICATION: Multiplication,
+    matcher.Term.DIVISION: Division,
 }
 
 

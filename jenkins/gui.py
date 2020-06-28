@@ -29,7 +29,7 @@ output_label.place(x=282, y=180)
 
 def update_labels():
     result = jenkins.recognize_input()
-    input_label.config(text=result["term"])
+    input_label.config(text=result["sentence"] + "\n\n" + result["term"])
     output_label.config(text=result["result"])
 
 
