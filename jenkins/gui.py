@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter.font import Font
 
 from PIL import ImageTk, Image
-import speech_to_text
 import jenkins
 
 root = Tk()
@@ -15,21 +14,27 @@ root.title("Jenkins - V1")
 root.iconbitmap("../images/Jenkins_Icon.ico")
 
 
-input_label = Label(root, text="Task", borderwidth=2, relief="solid", bg="#858585")
-input_label.config(height=10, width=30)
-input_label.pack()
-input_label.place(x=5, y=180)
+sentence_label = Label(root, text="Task", borderwidth=2, relief="solid", bg="#858585")
+sentence_label.config(height=5, width=70)
+sentence_label.pack()
+sentence_label.place(x=5, y=165)
+
+term_label = Label(root, text="Term", borderwidth=2, relief="solid", bg="#858585")
+term_label.config(height=5, width=30)
+term_label.pack()
+term_label.place(x=5, y=280)
 
 
 output_label = Label(root, text="Result", borderwidth=2, relief="solid", bg="#858585")
-output_label.config(height=10, width=30)
+output_label.config(height=5, width=30)
 output_label.pack()
-output_label.place(x=282, y=180)
+output_label.place(x=282, y=280)
 
 
 def update_labels():
     result = jenkins.recognize_input()
-    input_label.config(text=result["sentence"] + "\n\n" + result["term"])
+    sentence_label.config(text=result["sentence"])
+    term_label.config(text=result["term"])
     output_label.config(text=result["result"])
 
 
