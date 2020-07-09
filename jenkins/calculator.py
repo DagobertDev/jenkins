@@ -9,12 +9,9 @@ class Number:
         self.value = value
         self.operator = operator
 
-    def get_value(self):
-        return self.value
-
     def to_string(self) -> str:
         if self.operator is None:
-            return str(self.get_value())
+            return str(self.value)
         return self.operator.to_string(self.value)
 
 

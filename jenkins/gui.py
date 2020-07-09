@@ -14,21 +14,26 @@ root.title("Jenkins - V1")
 root.iconbitmap("../images/Jenkins_Icon.ico")
 
 
-sentence_label = Label(root, text="Task", borderwidth=2, relief="solid", bg="#858585")
+sentence_label = Label(root, text="Sie haben noch keine Aufgabe gestellt", borderwidth=2, relief="solid", bg="#858585")
 sentence_label.config(height=5, width=70)
 sentence_label.pack()
 sentence_label.place(x=5, y=165)
 
-term_label = Label(root, text="Term", borderwidth=2, relief="solid", bg="#858585")
+term_label = Label(root, text="", borderwidth=2, relief="solid", bg="#858585")
 term_label.config(height=5, width=30)
 term_label.pack()
 term_label.place(x=5, y=280)
 
 
-output_label = Label(root, text="Result", borderwidth=2, relief="solid", bg="#858585")
+output_label = Label(root, text="", borderwidth=2, relief="solid", bg="#858585")
 output_label.config(height=5, width=30)
 output_label.pack()
 output_label.place(x=282, y=280)
+
+equals_label = Label(root, text="=", borderwidth=2, relief="solid", bg="#858585")
+equals_label.config(height=2, width=2)
+equals_label.pack()
+equals_label.place(x=240, y=300)
 
 
 def update_labels():
@@ -41,7 +46,7 @@ def update_labels():
 boldButton = Font(size=10, weight="bold")
 
 
-start_button = Button(root, text="Click on me,\n" "to tell me something!", font=boldButton,
+start_button = Button(root, text="Zum Starten hier klicken", font=boldButton,
                       borderwidth=2, relief="solid", bg="#6CA6CD", command=lambda: update_labels())
 start_button.config(height=7, width=60)
 start_button.place(x=5, y=20)
@@ -51,7 +56,7 @@ speaker_label = Label(root, image=speaker)
 speaker_label.place(x=380, y=50)
 
 
-end_button = Button(root, text="Exit!", font=boldButton,
+end_button = Button(root, text="Beenden", font=boldButton,
                     borderwidth=2, relief="solid", bg="#6CA6CD", command=root.destroy)
 end_button.config(height=7, width=60)
 end_button.place(x=5, y=378)
