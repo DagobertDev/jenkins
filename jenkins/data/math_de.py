@@ -234,8 +234,8 @@ TRAIN_DATA = [
     (
         'Jenkins was ist 7 mal die Summe von 3 und 5',
         {
-            'heads': [0, 1, 2, 3, 3, 6, 4, 8, 6, 8, 6,],
-            'deps': ['NONE' 'NONE' 'NONE' 'NUM' 'OPER' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM'],
+            'heads': [0, 1, 2, 3, 3, 6, 4, 8, 6, 8, 6, ],
+            'deps': ['NONE', 'NONE', 'NONE', 'NUM', 'OPER', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM', ],
         },
     ),
     # Division Data-Set
