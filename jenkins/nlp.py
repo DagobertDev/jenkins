@@ -2,6 +2,7 @@ import pathlib
 import spacy
 import matcher
 import dependency_parser
+import calculator
 
 
 class NLP:
@@ -37,41 +38,7 @@ class NLP:
             print("Could not find useable ROOT")
             return {"term": "Error: Could not find useable ROOT", "result": ""}
 
-        import calculator
-        term = calculator.generate_term(current).to_string()
-        result = eval(term)
-        print(term, "=", result)
-        return {"term": term, "result": result}
-
-
-def calculate(token) -> str:
-    children = []
-    token_text = token.text if token.is_digit else matcher.operator_patterns[token._.operator][0]
-
-    # All tokens, that depend on this token and are possible terms are children
-    for c in token.children:
-        if c._.operator != matcher.Term.NONE:
-            children.append(calculate(c))
-
-    if len(children) == 0:
-        assert token.is_digit
-        return token.text
-
-    else:
-        if len(children) == 1:
-            return token_text + children[0]
-
-        if not token.is_digit:
-
-            result = [token_text] * (len(children) * 2 - 1)
-            result[0::2] = children
-
-            out = ""
-
-            for r in result:
-                out += r
-
-            return out
+        return calculator.calculate(current)
 
 
 if __name__ == '__main__':

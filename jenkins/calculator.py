@@ -130,3 +130,10 @@ def generate_term(token):
     for operator in operator_children:
         previous = ProxyNumber(previous, operator)
     return ProxyNumber(previous)
+
+
+def calculate(token):
+    term = generate_term(token).to_string()
+    result = eval(term)
+    print(term, "=", result)
+    return {"term": term, "result": result}
