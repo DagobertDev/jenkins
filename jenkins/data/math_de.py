@@ -203,6 +203,41 @@ TRAIN_DATA = [
             'deps': ['NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'CON', 'NUM', 'OPER', 'NUM', 'NONE'],
         },
     ),
+    (
+        'Was ist 3 mal 5',
+        {
+            'heads': [0, 1, 2, 2, 3, ],
+            'deps': ['NONE', 'NONE', 'NUM', 'OPER', 'NUM'],
+        },
+    ),
+    (
+        '98 mal die Summe aus 12 und 65',
+        {
+            'heads': [0, 0, 3, 1, 5, 3, 5, 3, ],
+            'deps': ['NUM', 'OPER', 'NONE', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
+        },
+    ),
+    (
+        '34 mal Produkt von 2 und 9',
+        {
+            'heads': [0, 0, 1, 4, 2, 4, 2, ],
+            'deps': ['NUM', 'OPER', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
+        },
+    ),
+    (
+        'Was ist 34 mal Summe von 2 und 9',
+        {
+            'heads': [0, 1, 2, 2, 3, 6, 4, 6, 4, ],
+            'deps': ['NONE', 'NONE', 'NUM', 'OPER', 'OPER', 'CON', 'NUM', 'LIST', 'NUM'],
+        },
+    ),
+    (
+        'Jenkins was ist 7 mal die Summe von 3 und 5',
+        {
+            'heads': [0, 1, 2, 3, 3, 6, 4, 8, 6, 8, 6,],
+            'deps': ['NONE' 'NONE' 'NONE' 'NUM' 'OPER' 'NONE' 'OPER' 'CON' 'NUM' 'LIST' 'NUM'],
+        },
+    ),
     # Division Data-Set
     (
         'Hey Jenkins rechne 20 durch 5',
